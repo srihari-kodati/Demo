@@ -8,6 +8,5 @@ jobs:
         steps:
         - name: Multiple steps in single command
           run: |
-            sudo apt-get install -y cowsay
-            cowsay -f dragon "I'm a DRAGON...ROAR..." >> dragon.txt
-            cat dragon.txt
+            chmod +x ascii-script.sh
+            ./ascii-script.sh
