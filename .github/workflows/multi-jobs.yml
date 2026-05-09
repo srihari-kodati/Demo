@@ -13,12 +13,14 @@ jobs:
           run: cowsay -f dragon >> dragon.txt
 
     test:
+        needs: build
         runs-on: ubuntu-latest
         steps:
         - name: Test Dragon FIle
           run: grep -i "dragon" dragon.txt
 
     deploy:
+        needs: test
         runs-on: ubuntu-latest
         steps:
 
