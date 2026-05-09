@@ -7,7 +7,7 @@ jobs:
         runs-on: ubuntu-latest
         concurrency:
             group: trigger
-            cancel-in-progress: true
+            cancel-in-progress: false
         steps:
         - name: Checkout
           uses: actions/checkout@v6
@@ -17,4 +17,5 @@ jobs:
           run: cat README.md
 
 
-
+        - name: Sleep 60s
+          run: sleep 60s
