@@ -1,0 +1,12 @@
+name: First_WorkFlow
+
+on: push
+
+jobs:
+    sample:
+        runs-on: ubuntu-latest
+        steps:
+        - name: List Files
+          run: ls -ltra
+        - name: Read File
+          run: cat README.md
