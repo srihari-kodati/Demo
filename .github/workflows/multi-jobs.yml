@@ -12,10 +12,21 @@ jobs:
         - name: Execute Cowsay CMD
           run: cowsay -f dragon >> dragon.txt
 
+        - name: Upload Dragon File
+          uses: actions/upload-artifact@v7
+          with:
+            name: dragon-text-file
+            path: dragon.txt
+
     test:
         needs: build
         runs-on: ubuntu-latest
         steps:
+        - name: Download Dragon File
+          uses: actions/download-artifact@v7
+          with:
+            name: dragon-text-file
+
         - name: Test Dragon FIle
           run: grep -i "dragon" dragon.txt
 
@@ -23,7 +34,11 @@ jobs:
         needs: test
         runs-on: ubuntu-latest
         steps:
-
+        - name: Download Dragon File
+          uses: actions/download-artifact@v7
+          with:
+            name: dragon-text-file
+            
         - name: Read Dragon File
           run: cat dragon.txt
 
