@@ -6,6 +6,8 @@ jobs:
     ascii_job:
         runs-on: ubuntu-latest
         steps:
+        - name: Checkout
+          uses: actions/checkout@v6
         - name: Multiple steps in single command
           run: |
             chmod +x ascii-script.sh
