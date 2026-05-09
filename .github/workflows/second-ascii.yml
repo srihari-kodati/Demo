@@ -1,0 +1,16 @@
+name: Generate ASCII 
+
+on: push
+
+jobs:
+    ascii_job:
+        runs-on: ubuntu-latest
+        steps:
+        - name: Install Cowsay CMD
+          run: sudo apt-get install -y cowsay
+
+        - name: Execute the Cowsay CMD
+          run: cowsay -f dragon "I'm a DRAGON...ROAR..." >> dragon.txt
+
+        - name: Read Cowsay file
+          run: cat dragon.txt
