@@ -39,6 +39,8 @@ jobs:
           uses: actions/download-artifact@v7
           with:
             name: dragon-text-file
+        - name: Sleep 65s
+          run: sleep 65s
 
         - name: Read Dragon File
           run: cat dragon.txt
@@ -46,5 +48,3 @@ jobs:
         - name: List Files
           run: ls
 
-        - name: Sleep 65s
-          run: sleep 65s
