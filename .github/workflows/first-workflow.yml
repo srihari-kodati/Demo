@@ -6,6 +6,8 @@ jobs:
     sample:
         runs-on: ubuntu-latest
         steps:
+        - name: Checkout
+          uses: actions/checkout@v6
         - name: List Files
           run: ls -ltra
         - name: Read File
