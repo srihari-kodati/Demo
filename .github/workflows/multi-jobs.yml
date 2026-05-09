@@ -30,9 +30,6 @@ jobs:
         - name: Test Dragon FIle
           run: grep -i "dragon" dragon.txt
 
-        - name: Sleep 60s
-          run: sleep 65s
-
     deploy:
         needs: test
         runs-on: ubuntu-latest
@@ -48,3 +45,6 @@ jobs:
 
         - name: List Files
           run: ls
+
+        - name: Sleep 65s
+          run: sleep 65s
