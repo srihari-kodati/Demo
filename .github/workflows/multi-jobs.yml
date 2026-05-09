@@ -28,7 +28,11 @@ jobs:
             name: dragon-text-file
 
         - name: Test Dragon FIle
+          timeout-minutes: 1
           run: grep -i "dragon" dragon.txt
+
+        - name: Sleep 60s
+          run: sleep 65s
 
     deploy:
         needs: test
