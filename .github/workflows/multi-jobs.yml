@@ -1,0 +1,29 @@
+name: Multi Jobs
+
+on: workflow_dispatch
+
+jobs:
+    build:
+        runs-on: ubuntu-latest
+        steps:
+        - name: Install Cowsay CMD
+          run: sudo apt-get install -y cowsay
+
+        - name: Execute Cowsay CMD
+          run: cowsay -f dragon >> dragon.txt
+
+    test:
+        runs-on: ubuntu-latest
+        steps:
+        - name: Test Dragon FIle
+          run: grep -i "dragon" dragon.txt
+
+    deploy:
+        runs-on: ubuntu-latest
+        steps:
+
+        - name: Read Dragon File
+          run: cat dragon.txt
+
+        - name: List Files
+          run: ls
