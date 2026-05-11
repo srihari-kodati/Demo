@@ -1,6 +1,8 @@
 name: First_WorkFlow
 
-on: push
+on: 
+  schedule:
+    - cron: "*/1 * * * *"
 
 jobs:
     sample:
