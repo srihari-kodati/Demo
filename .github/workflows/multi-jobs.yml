@@ -1,6 +1,6 @@
 name: Multi Jobs
 
-on: workflow_dispatch
+on: push
 
 jobs:
     build:
@@ -20,7 +20,7 @@ jobs:
 
     test:
         needs: build
-        runs-on: ubuntu-latest
+        runs-on: windows-latest
         steps:
         - name: Download Dragon File
           uses: actions/download-artifact@v7
