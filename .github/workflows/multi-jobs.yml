@@ -20,7 +20,7 @@ jobs:
 
     test:
         needs: build
-        runs-on: self-hosted
+        runs-on: ubuntu-latest
         steps:
         - name: Download Dragon File
           uses: actions/download-artifact@v7
