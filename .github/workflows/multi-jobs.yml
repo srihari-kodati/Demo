@@ -1,6 +1,6 @@
 name: Multi Jobs
 
-on: workflow_dispatch
+on: push
 
 jobs:
     build:
@@ -32,7 +32,7 @@ jobs:
 
     deploy:
         if: github.ref == 'refs/heads/main'
-        
+
         needs: test
         runs-on: ubuntu-latest
         steps:
