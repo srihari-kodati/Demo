@@ -1,6 +1,7 @@
 name: Multi Jobs
 
-on: push
+on: 
+  push
 
 jobs:
     build:
