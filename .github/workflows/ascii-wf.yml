@@ -10,6 +10,10 @@ jobs:
         steps:
         - name: Checkout Repo
           uses: actions/checkout@v6
+          with:
+            sparse-checkout: |
+             README.md
+            sparse-checkout-cone-mode: false
         - name: Give Permission for ASCII Script
           run: |
             chmod +x ascii-script.sh
