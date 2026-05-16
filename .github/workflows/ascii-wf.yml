@@ -9,17 +9,7 @@ jobs:
         runs-on: ubuntu-latest
         steps:
 
-        - name: Install Cowsay CMD
-          run: sudo apt-get install -y cowsay
-
-        - name: Execute Cowsay CMD
-          run: cowsay -f dragon "I'm a DRAGON...ROAR..!!!" >> dragon.txt
-
-        - name: Check Dragon file
-          run: grep -i dragon "dragon.txt"
-
-        - name: Read dragon file
-          run: cat dragon.txt
-
-        - name: List files
-          run: ls
+        - name: Give Permission for ASCII Script
+          run: |
+            chmod +x ascii-script.sh
+            ./ascii-script
