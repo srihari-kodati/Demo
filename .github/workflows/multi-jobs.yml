@@ -1,0 +1,30 @@
+name: Multiple Jobs
+
+on: push
+
+jobs:
+    build:
+        runs-on: ubuntu-latest
+        steps:
+        - name: Install Cowsay CMD
+          run: sudo apt-get install cowsay -y
+
+        - name: Execute Cowsay CMD
+          run: cowsay -f dragon "I'm a DRAGON...ROAR...!!!" >> dragon.txt
+
+    test:
+        runs-on: ubuntu-latest
+
+
+        steps:
+
+        - name: Check dragon.txt
+          run: grep -i dragon "dragon.txt"
+
+    deploy:
+        runs-on: ubuntu-latest
+
+
+        steps:
+        - name: Read dragon.txt file
+          run: cat dragon.txt
