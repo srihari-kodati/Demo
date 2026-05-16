@@ -23,7 +23,7 @@ jobs:
 
         concurrency: 
             group: testing
-            cancel-in-progress: false
+            cancel-in-progress: true
 
         runs-on: ubuntu-latest
         steps:
@@ -37,9 +37,9 @@ jobs:
 
         - name: Sleep for 65s     
         #   timeout-minutes: 1   
-          run: sleep 65s
+          run: sleep 25s
 
-          
+
     deploy:
         needs: test
         runs-on: ubuntu-latest
