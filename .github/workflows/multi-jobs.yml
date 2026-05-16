@@ -23,9 +23,9 @@ jobs:
 
         concurrency: 
             group: testing
-            cancel-in-progress: false
+            cancel-in-progress: true
 
-            
+
         runs-on: ubuntu-latest
         steps:
         - name: Download dragon.txt
