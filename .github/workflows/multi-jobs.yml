@@ -19,11 +19,13 @@ jobs:
             path: dragon.txt
 
     test:
-
         needs: build
+
+        concurrency: 
+            group: testing
+            cancel-in-progress: false
+            
         runs-on: ubuntu-latest
-
-
         steps:
         - name: Download dragon.txt
           uses: actions/download-artifact@v7
@@ -32,6 +34,10 @@ jobs:
             
         - name: Check dragon.txt
           run: grep -i dragon "dragon.txt"
+
+        - name: Sleep for 65s     
+          timeout-minutes: 1   
+          run: sleep 65s
 
     deploy:
         needs: test
