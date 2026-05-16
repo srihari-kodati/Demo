@@ -25,7 +25,6 @@ jobs:
             group: testing
             cancel-in-progress: true
 
-
         runs-on: ubuntu-latest
         steps:
         - name: Download dragon.txt
