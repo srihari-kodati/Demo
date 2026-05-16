@@ -13,4 +13,7 @@ jobs:
         - name: Give Permission for ASCII Script
           run: |
             chmod +x ascii-script.sh
-            ./ascii-script
+            ./ascii-script.sh
+
+        - name: List Files
+          run: ls -ltra
