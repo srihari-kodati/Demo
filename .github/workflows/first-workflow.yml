@@ -1,7 +1,10 @@
 name: First Workflow
 
 on:
-    push
+   push:
+    # branches: [ "main" ]
+   pull_request:
+    branches: [ "main" ]
 
 jobs: 
     read-file_jobs:
@@ -16,6 +19,8 @@ jobs:
 
         - name: Read File
           run: cat "README.md"
-
+        
         - name: List Files
           run: ls -ltra
+
+
